@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700&display=swap');
+
+html {
+  font-size: 4vmin;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.pop-up {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: max-content;
+  max-width: 90vw;
+  margin: 0.125em auto;
+  padding: 0.25em;
+  background-color: #56a55c;
+  border-radius: 0.25em;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  box-shadow: 0.1em 0.1em 0.25em #00000021;
+}
+
+#is-joke {top: 0;}
+#for-pc {top: 2rem;}
+
+.pop-up .del-button {
+  display: inline-block;
+  position: relative;
+  background-color: #1c6d11;
+  font-size: 0.125em;
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+}
+.pop-up .del-button::before, .pop-up .del-button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 3.5em;
+  bottom: 1.5em;
+  width: 1em;
+  height: 5em;
+  background-color: #ffffff;
+}
+.pop-up .del-button::before {
+  transform: rotate(45deg);
+}
+.pop-up .del-button::after {
+  transform: rotate(-45deg);
+}
+
+#header {
+  background-color: #e08721;
+  color: #ffffff;
+  box-shadow: 0 0 0.5em #00000057;
+  margin-bottom: 0.5rem;
+}
+
+#header .top {
+  display: flex;
+  justify-content: space-between;
+}
+
+#header h1 {
+  margin: 0;
+  display: inline-block;
+}
+
+#header ul {
+  display: flex;
+  list-style: none;
+  margin-right: 0.5em;
+}
+
+#header li {
+  padding: 0 0.25em;
+}
+
+#search {
+  background-color: #72430e;
+  text-align: right;
+  padding: 0.25rem 0;
+  font-size: 0.75em;
+}
+#search::before {
+  content: "Search:";
+  color: #ffffff;
+}
+#search::after {
+  content: "🔎";
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+#search input {
+  font-size: 1em;
+  width: 12em;
+  padding: 0 0.5em;
+  border-radius: 0.5em;
+}
+
+#outer {
+  display: flex;
+  padding: 1rem;
+  width: calc(100% - 2rem);
+}
+
+#sub, #main {
+  height: 100%;
+}
+
+#sub {
+  flex-shrink: 2;
+}
+
+#sub img {
+  max-width: 45vw;
+  height: auto;
+}
+
+#sub .switcher {
+  width: min-content;
+  list-style: none;
+  white-space: nowrap;
+  padding: 0;
+  display: flex;
+  margin: 0;
+  align-items: center;
+}
+#sub .switcher::before {
+  content: "画像：";
+  font-size: 1.25em;
+  font-weight: bolder;
+  display: inline-block;
+}
+
+#sub .switcher li {
+  background-color: #1c6d11;
+  border-radius: 0.25em;
+  color: #ffffff;
+  margin: 0.25em;
+  padding: 0.125em 0.25em;
+  transition: 0.25s;
+}
+#sub .switcher li:hover {
+  background-color: #56a55c;
+}
+
+#main {
+  margin-left: 1.5rem;
+  flex-grow: 1;
+}
+
+#main h2 {
+  margin: 0;
+}
+#main h2::after {
+  display: block;
+  content: attr(subText);
+  font-size: 0.75em;
+  color: #5a5a5a;
+  font-weight: lighter;
+}
+
+#main .buy {
+  font-size: 1rem;
+  font-weight: initial;
+  background-color: #e08721;
+  border: 0.25em outset #e08721;
+  border-radius: 0.25em;
+  color: #ffffff;
+  float: right;
+  margin-right: 0.5rem;
+}
+
+#main .price {
+  color: #cf2121;
+  margin: 0;
+  text-align: right;
+}
+#main .price::before {
+  content: attr(before);
+  display: inline-block;
+  margin-right: 0.25em;
+  text-decoration: line-through #5a5a5a;
+}
+
+#review {
+  margin: 1rem;
+}
+
+#review h2 {
+  margin: 0;
+}
+
+#review > div {
+  margin: 0.25rem 0 0.5rem 1rem;
+  padding: 0 0 0 1rem;
+  border-left: 0.1em solid #d3d3d3;
+}
+
+#review .name, #review .star {
+  display: inline-block;
+}
+
+#review .name {
+  font-size: 1.25em;
+  font-weight: bolder;
+}
+
+#review .star {
+  font-size: 0.75em;
+  padding: 0 1rem;
+  color: #e0d536;
+}
+#review .star::before {
+  content: "評価：";
+  color: #5a5a5a;
+}
+
+#review .rate {
+  font-size: 0.75em;
+  color: #5a5a5a;
+}
+
+#review .rate .good::before {
+  content: "👍";
+  opacity: 0.5;
+}
+
+#review .rate .bad::before {
+  content: "👎";
+  opacity: 0.5;
+}

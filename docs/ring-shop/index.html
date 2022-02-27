@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【一面体ダイス】 商品ページ - Koh shop</title>
+  <link rel="stylesheet" href="./style.css">
+
+  <script>
+    let imgs;
+
+    function switchImg(index) {
+      for (let img of imgs) {
+        img.style.display = 'none';
+      }
+      imgs[index].style.display = 'initial';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      imgs = document.getElementsByClassName('img');
+      switchImg(0);
+
+      if (!navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+        document.getElementById('for-pc').style.display = 'none'
+      }
+    });
+  </script>
+</head>
+<body>
+  <div id="is-joke" class="pop-up">
+    <span>このサイトの内容はすべてジョークです。</span>
+    <span class="del-button" onClick="document.getElementById('is-joke').style.display = 'none'"></span>
+  </div>
+  <div id="for-pc" class="pop-up">
+    <span>このサイトはPCで見ることを想定して作られています。</span>
+    <span class="del-button" onClick="document.getElementById('for-pc').style.display = 'none'"></span>
+  </div>
+  <div id="header">
+    <div>
+      <div class="top">
+        <h1>Koh shop</h1>
+        <ul onClick="alert('404 page not found.')">
+          <li>Home</li>
+          <li>About</li>
+          <li>Login</li>
+        </ul>
+      </div>
+      <div id="search">
+        <input type="search">
+      </div>
+    </div>
+  </div>
+  <div id="outer">
+    <div id="sub">
+      <ul class="switcher">
+        <li onClick="switchImg(0)">外観</li>
+        <li onClick="switchImg(1)">箱</li>
+      </ul>
+      <div>
+        <img class="img" src="./img/ring.png" alt="指輪画像">
+        <img class="img" src="./img/box.png" alt="指輪画像">
+      </div>
+    </div>
+    <div id="main">
+      <h2 subText="TRPGのアイスブレイキングに">一面ダイス <span class="buy" onClick="alert('さすがに、そこまで作りこむ時間はありませんでした。')">カートに入れる</span></h2>
+      <h3 class="price" before="6980￥">4980￥+税</h3>
+      <div class="caption">
+        「神はサイコロを振らない」<br>
+        かの有名な偉人が言ったように、自分の運命を運に任せるのではなく、自分で決断してゆこうという思いが込められたアーティファクト。<br>
+        GMに1d1を振れと言われた際のカウンター用にも。<br>
+        TRPGプレイヤーなら一つは持っておきたい品が、指輪型でどこへでも持ち運べる形で登場。
+      </div>
+    </div>
+  </div>
+  <div id="review">
+    <h2>レビューと評価</h2>
+    <div>
+      <div class="name">サンマ</div><div class="star">★★★★★</div>
+      <div class="content">
+        この指輪をつけてみたら、HPの最大値が25%上昇しました！文句なしの品です。近接型の職業の人には特におすすめです。
+      </div>
+      <div class="rate">
+        <span class="good">12</span>
+        <span class="bad">1</span>
+      </div>
+    </div>
+    <div>
+      <div class="name">ピーナッツ</div><div class="star">★★★★☆</div>
+      <div class="content">
+        購入依頼、ファンブルが出ていません！ただ、1クリが出たことはないので星4にしました。
+      </div>
+      <div class="rate">
+        <span class="good">3</span>
+        <span class="bad">0</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
